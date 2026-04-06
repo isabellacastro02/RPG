@@ -56,14 +56,22 @@ export default function App() {
           <p id='pontosVida'>Pontos de vida (HP) {hp}/100</p>
           <div className="barra" style={{background: corBarra}}></div>
 
-          <button className='BTcura'>Receber Dano</button>
-          <button className='BTcura'>Curar</button>
+          <button 
+            className='BTcura'
+            onClick={receberDano}
+            disabled={!vivo}
+            >Receber Dano</button>
+
+          <button 
+            className='BTcura'
+            onClick={curar}
+            >Curar</button>
           
           <div className="classes">
-            <button>🧙‍♂️ Mago</button>
-            <button>⚔️ Guerreiro</button>
-            <button>🏹 Arqueiro</button>
-            <button>➕ Curandeiro</button>
+            <button onClick={() => setClasse(CLASSES[0])}>🧙‍♂️ Mago</button>
+            <button onClick={() => setClasse(CLASSES[1])}>⚔️ Guerreiro</button>
+            <button onClick={() => setClasse(CLASSES[2])}>🏹 Arqueiro</button>
+            <button onClick={() => setClasse(CLASSES[3])}>➕ Curandeiro</button>
           </div>
 
         </section>
